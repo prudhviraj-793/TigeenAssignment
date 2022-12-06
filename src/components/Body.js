@@ -9,10 +9,12 @@ function Body() {
     console.log(e.target.checked);
   }
   return (
-    <div className="border-2 my-1 rounded shadow-lg shadow-gray-300 text-xs p-2 w-3/4 mx-auto border-gray-300">
-      <div className="flex justify-around mb-2 py-2 border-gray-300 border-b-2">
+    <div className="border-2 mt-1 mb-9 rounded shadow-lg shadow-gray-300 text-xs p-2 w-3/4 mx-auto border-gray-300">
+      <div className="flex justify-around items-center mb-2 py-2 border-gray-300 border-b-2">
         <EditIcon />
+        <div className="w-1/3 h-0.5 bg-gray-300"></div>
         <SettingsIcon />
+        <div className="w-1/3 h-0.5 bg-gray-300"></div>
         <AdjustIcon />
       </div>
       <Logo_color />
@@ -82,7 +84,9 @@ function Body() {
         </div>
       </div>
       <div className="flex items-center border-t-2 border-gray-300 mb-1">
-        <button className="bg-blue-600 text-white px-3 py-1 my-1 rounded">CONTINUE</button>
+        <button className="bg-blue-600 text-white px-3 py-1 my-1 rounded">
+          CONTINUE
+        </button>
       </div>
     </div>
   );

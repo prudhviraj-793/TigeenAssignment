@@ -1,9 +1,12 @@
-import React from 'react'
-import MenuIcon from '@mui/icons-material/Menu';
-
+import React from "react";
+import MenuIcon from "@mui/icons-material/Menu";
 
 function SideDrawer() {
-  return <MenuIcon />
+  return (
+    <button>
+      <MenuIcon />
+    </button>
+  );
 }
 
-export default SideDrawer
+export default SideDrawer;
