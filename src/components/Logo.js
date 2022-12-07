@@ -1,21 +1,26 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { sliceActions } from "../store/slice";
 
-function Logo_color() {
+function Logo() {
+  const dispatch = useDispatch();
+  const color = useSelector((state) => state.slice.color);
+  const accent = `accent-${color}-600`;
   function changeHandler(e) {
-    console.log(e.target.value);
+    dispatch(sliceActions.setPosition(e.target.value));
   }
   return (
     <div>
       <div className="mb-1">
         <p>I want a Company Logo</p>
-        <div className="flex items-center h-6">
+        <div className={`flex items-center h-6 ${accent}`}>
           <div className="mr-2 flex items-center ">
             <input
               className="mr-2"
               onChange={changeHandler}
               type="radio"
               name="logo"
-              value="left"
+              value="start"
             />
             <label htmlFor="">Left</label>
           </div>
@@ -25,7 +30,7 @@ function Logo_color() {
               onChange={changeHandler}
               type="radio"
               name="logo"
-              value="right"
+              value="end"
             />
             <label htmlFor="">Right</label>
           </div>
@@ -51,36 +56,8 @@ function Logo_color() {
           </div>
         </div>
       </div>
-      <div className="mb-1">
-        <p>Present Color</p>
-        <div className="flex items-center">
-          <div className="mr-2 flex items-center ">
-            <input
-              className="mr-2"
-              onChange={changeHandler}
-              type="radio"
-              name="color"
-              value="blue"
-            />
-            <label htmlFor="">Blue</label>
-          </div>
-          <div className="mr-2 flex items-center ">
-            <input
-              className="mr-2"
-              onChange={changeHandler}
-              type="radio"
-              name="color"
-              value="red"
-            />
-            <label htmlFor="">Red</label>
-          </div>
-        </div>
-      </div>
-      <p className="mb-3 text-xs">
-        Present Apply only:Header Background, Button, Radio Button & Switch
-      </p>
     </div>
   );
 }
 
-export default Logo_color;
+export default Logo;

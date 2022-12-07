@@ -1,15 +1,22 @@
 import React from "react";
 import SideDrawer from "./SideDrawer";
 import logo from "../logo.png";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const position = useSelector((state) => state.slice.position);
+  const color = useSelector((state) => state.slice.color);
+  const bg = `bg-${color}-600`;
+  const pos = `justify-${position}`;
   return (
-    <div className="container p-1 sm:w-full bg-blue-600 text-white">
+    <div className={`container p-1 sm:w-full ${bg}  text-white`}>
       <div className="flex justify-between items-center">
         <SideDrawer />
-        <div className="flex w-3/4 justify-center">
-          <img className="w-1/4" src={logo} alt="logo" />
-        </div>
+        {position !== "disable" && (
+          <div className={`flex w-3/4 ${pos}`}>
+            <img className="w-1/4" src={logo} alt="logo" />
+          </div>
+        )}
         <SideDrawer />
       </div>
       <nav className="text-xs">

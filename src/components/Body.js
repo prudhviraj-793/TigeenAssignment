@@ -2,9 +2,13 @@ import React from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AdjustIcon from "@mui/icons-material/Adjust";
-import Logo_color from "./Logo_color";
+import Logo from "./Logo";
+import Color from "./Color";
+import { useSelector } from "react-redux";
 
 function Body() {
+  const color = useSelector((state) => state.slice.color);
+  const accent = `accent-${color}-600`;
   function checkboxHandler(e) {
     console.log(e.target.checked);
   }
@@ -17,8 +21,9 @@ function Body() {
         <div className="w-1/3 h-0.5 bg-gray-300"></div>
         <AdjustIcon />
       </div>
-      <Logo_color />
-      <div>
+      <Logo />
+      <Color />
+      <div className={accent}>
         <div className="flex items-center mb-1">
           <input
             onChange={checkboxHandler}
@@ -84,7 +89,7 @@ function Body() {
         </div>
       </div>
       <div className="flex items-center border-t-2 border-gray-300 mb-1">
-        <button className="bg-blue-600 text-white px-3 py-1 my-1 rounded">
+        <button className={`bg-${color}-600 text-white px-3 py-1 my-1 rounded`}>
           CONTINUE
         </button>
       </div>
