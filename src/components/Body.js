@@ -43,6 +43,7 @@ function Body() {
       <div className={accent}>
         <div className="flex items-center mb-1">
           <input
+            defaultChecked={true}
             onChange={headerCheckboxHandler}
             className="mr-2"
             type="checkbox"
@@ -52,6 +53,7 @@ function Body() {
         </div>
         <div className="flex items-center mb-1">
           <input
+            defaultChecked={true}
             onChange={footerCheckboxHandler}
             className="mr-2"
             type="checkbox"
@@ -63,12 +65,14 @@ function Body() {
           <input
             className="mr-2"
             type="checkbox"
+            defaultChecked={true}
             name="checks"
           />
           <label htmlFor="">i want a Drawer overlay mode</label>
         </div>
         <div className="flex items-center mb-1">
           <input
+            defaultChecked={true}
             onChange={leftDrawerCheckboxHandler}
             className="mr-2"
             type="checkbox"
@@ -78,6 +82,7 @@ function Body() {
         </div>
         <div className="flex items-center mb-1">
           <input
+            defaultChecked={true}
             onChange={rightDrawerCheckboxHandler}
             className="mr-2"
             type="checkbox"
@@ -87,6 +92,7 @@ function Body() {
         </div>
         <div className="flex items-center mb-1">
           <input
+            defaultChecked={true}
             onChange={navCheckboxHandler}
             className="mr-2"
             type="checkbox"
@@ -96,6 +102,7 @@ function Body() {
         </div>
         <div className="flex items-center mb-4">
           <input
+            defaultChecked={true}
             onChange={navBottomCheckboxHandler}
             className="mr-2"
             type="checkbox"

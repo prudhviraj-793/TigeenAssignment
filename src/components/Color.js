@@ -16,6 +16,7 @@ function Color() {
         <div className={`flex items-center ${accent}`}>
           <div className="mr-2 flex items-center ">
             <input
+              defaultChecked={true}
               className="mr-2"
               onChange={changeHandler}
               type="radio"

@@ -16,6 +16,7 @@ function Logo() {
         <div className={`flex items-center h-6 ${accent}`}>
           <div className="mr-2 flex items-center ">
             <input
+              defaultChecked={true}
               className="mr-2"
               onChange={changeHandler}
               type="radio"
