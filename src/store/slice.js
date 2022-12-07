@@ -20,27 +20,27 @@ const slice = createSlice({
     setColor(state, action) {
       state.color = action.payload;
     },
-    showHeader(state) {
-      state.showHeader = !state.showHeader;
+    showHeader(state, action) {
+      state.showHeader = action.payload;
     },
-    showFooter(state) {
-      state.showFooter = !state.showFooter;
+    showFooter(state, action) {
+      state.showFooter = action.payload;
     },
-    leftSideDrawer(state) {
-      state.leftSideDrawer = !state.leftSideDrawer;
+    leftSideDrawer(state, action) {
+      state.leftSideDrawer = action.payload;
     },
-    rightSideDrawer(state) {
-      state.rightSideDrawer = !state.rightSideDrawer;
+    rightSideDrawer(state, action) {
+      state.rightSideDrawer = action.payload;
     },
-    showNav(state) {
-      state.showNav = !state.showBottomNav;
+    showNav(state, action) {
+      state.showNav = action.payload;
     },
-    showBottomNav(state) {
-      state.showBottomNav = !state.showBottomNav;
+    showBottomNav(state, action) {
+      state.showBottomNav = action.payload;
     },
   },
 });
 
-export const sliceActions = slice.actions
+export const sliceActions = slice.actions;
 
-export default slice.reducer
+export default slice.reducer;

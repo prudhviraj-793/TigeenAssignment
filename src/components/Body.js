@@ -4,13 +4,30 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import AdjustIcon from "@mui/icons-material/Adjust";
 import Logo from "./Logo";
 import Color from "./Color";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { sliceActions } from "../store/slice";
 
 function Body() {
   const color = useSelector((state) => state.slice.color);
   const accent = `accent-${color}-600`;
-  function checkboxHandler(e) {
-    console.log(e.target.checked);
+  const dispatch = useDispatch();
+  function headerCheckboxHandler(e) {
+    dispatch(sliceActions.showHeader(e.target.checked));
+  }
+  function footerCheckboxHandler(e) {
+    dispatch(sliceActions.showFooter(e.target.checked));
+  }
+  function leftDrawerCheckboxHandler(e) {
+    dispatch(sliceActions.leftSideDrawer(e.target.checked));
+  }
+  function rightDrawerCheckboxHandler(e) {
+    dispatch(sliceActions.rightSideDrawer(e.target.checked));
+  }
+  function navCheckboxHandler(e) {
+    dispatch(sliceActions.showNav(e.target.checked));
+  }
+  function navBottomCheckboxHandler(e) {
+    dispatch(sliceActions.showBottomNav(e.target.checked));
   }
   return (
     <div className="border-2 mt-1 mb-9 rounded shadow-lg shadow-gray-300 text-xs p-2 w-3/4 mx-auto border-gray-300">
@@ -26,7 +43,7 @@ function Body() {
       <div className={accent}>
         <div className="flex items-center mb-1">
           <input
-            onChange={checkboxHandler}
+            onChange={headerCheckboxHandler}
             className="mr-2"
             type="checkbox"
             name="checks"
@@ -35,7 +52,7 @@ function Body() {
         </div>
         <div className="flex items-center mb-1">
           <input
-            onChange={checkboxHandler}
+            onChange={footerCheckboxHandler}
             className="mr-2"
             type="checkbox"
             name="checks"
@@ -44,7 +61,6 @@ function Body() {
         </div>
         <div className="flex items-center mb-1">
           <input
-            onChange={checkboxHandler}
             className="mr-2"
             type="checkbox"
             name="checks"
@@ -53,7 +69,7 @@ function Body() {
         </div>
         <div className="flex items-center mb-1">
           <input
-            onChange={checkboxHandler}
+            onChange={leftDrawerCheckboxHandler}
             className="mr-2"
             type="checkbox"
             name="checks"
@@ -62,7 +78,7 @@ function Body() {
         </div>
         <div className="flex items-center mb-1">
           <input
-            onChange={checkboxHandler}
+            onChange={rightDrawerCheckboxHandler}
             className="mr-2"
             type="checkbox"
             name="checks"
@@ -71,7 +87,7 @@ function Body() {
         </div>
         <div className="flex items-center mb-1">
           <input
-            onChange={checkboxHandler}
+            onChange={navCheckboxHandler}
             className="mr-2"
             type="checkbox"
             name="checks"
@@ -80,7 +96,7 @@ function Body() {
         </div>
         <div className="flex items-center mb-4">
           <input
-            onChange={checkboxHandler}
+            onChange={navBottomCheckboxHandler}
             className="mr-2"
             type="checkbox"
             name="checks"
